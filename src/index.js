@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { applyMiddleware, createStore } from 'redux';
-import { promiseMiddleware } from './middleware';
+import { promiseMiddleware } from './middleware';	
 
 //set default state equal 
 const defaultState = { appName: 'CONDUIT' };
@@ -14,7 +14,7 @@ const reducer = function(state = defaultState, action) {
 	}
 	return state;
 };
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(promiseMiddleware));
 
 ReactDOM.render((
   <Provider store={ store }>
