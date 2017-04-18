@@ -2,7 +2,8 @@ import App from './App';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { promiseMiddleware } from './middleware';
 
 //set default state equal 
 const defaultState = { appName: 'CONDUIT' };
